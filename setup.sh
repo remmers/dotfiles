@@ -8,8 +8,9 @@
 
 ########## Variables
 
-dir=~/dotfiles                    # dotfiles directory
-olddir=~/dotfiles_old             # old dotfiles backup directory
+# dotfiles in ~
+dir=~/dotfiles                                      # dotfiles directory
+olddir=~/dotfiles_old                               # old dotfiles backup directory
 
 # list of files/folders to symlink in homedir
 files="
@@ -17,7 +18,13 @@ files="
   .zshrc
   .p10k.zsh
 "
-# files="bashrc vimrc vim oh-my-zsh private scrotwm.conf Xresources"    # list of files/folders to symlink in homedir
+
+# dotfiles for VS Code
+backup_dir_vscode=~/dotfiles_old/.vscode
+dotfiles_vscode_settings_path=~/dotfiles/.vscode/settings.json
+vscode_settings_dir=~/.vscode-server/data/Machine
+vscode_settings_path=~/.vscode-server/data/Machine/settings.json
+
 
 ##########
 
@@ -38,7 +45,7 @@ echo "done"
 
 # move any existing dotfiles in homedir to dotfiles_old directory,
 # then create symlinks from the homedir to any files in the ~/dotfiles directory specified in $files
-echo "Moving any existing dotfiles from ~ to $olddir and creating symlinks to the files in $dir ..."
+echo "Backup existing dotfiles from ~ to $olddir and create symlinks to the files in $dir ..."
 for file in $files; do
   echo "- $file:"
   echo -n "   - move from ~/ to $olddir/"
@@ -48,6 +55,26 @@ for file in $files; do
   ln -s $dir/$file ~/$file
   echo " ... done"
 done
+
+# move and link vscode settings
+
+echo "Backup existing vscode settings and create symlinks"
+if [ ! -d "$vscode_settings_dir" ]; then
+  echo " - Settings directory not found -> create ..."
+  echo -n " - mkdir $vscode_settings_dir ... "
+  mkdir -p $vscode_settings_dir
+  echo " -> done"
+else
+  echo " -> Settings directory found."
+fi
+
+  echo " - settings.json:"
+  echo -n "   - move from $vscode_settings_dir to $backup_dir_vscode"
+  mv $vscode_settings_path $backup_dir_vscode
+  echo " ... done"
+  echo -n "   - symlink from $dotfiles_dir_vscode to ~/"
+  ln -s $dotfiles_vscode_settings_path $vscode_settings_path
+  echo " ... done"
 
 ############################
 # ZSH

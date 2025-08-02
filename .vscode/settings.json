@@ -1,0 +1,39 @@
+//  test 1
+{
+  // General settings
+  "telemetry.telemetryLevel": "off", // Disable telemetry
+
+  "window.zoomLevel": 1,
+  "editor.tabSize": 2,
+  "editor.renderWhitespace": "boundary",
+  "editor.detectIndentation": false,
+  "debug.allowBreakpointsEverywhere": true,
+
+  // Github Copilot settings
+  "github.copilot.enable": {
+    // "*": false,
+    "plaintext": false,
+    "markdown": false,
+    "scminput": false
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+
+  //  Rust Analyzer settings
+  "rust-analyzer.lens.run.enable": false,
+  "rust-analyzer.lens.debug.enable": true,
+  "rust-analyzer.cargo.sysroot": "discover",
+  "rust-analyzer.lens.implementations.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.parameterHints.enable": false,
+  
+  // CMake settings
+  "cmake.showOptionsMovedNotification": false,
+  "files.insertFinalNewline": true,
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+
+  // Svelte settings
+  "svelte.enable-ts-plugin": true
+}
