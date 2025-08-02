@@ -101,9 +101,17 @@ fi
 ############################
 echo "# Setup oh-my-zsh"
 if [ ! -d "$HOME/.oh-my-zsh" ]; then
-  echo " -> Cloning oh-my-zsh"
-  # git clone https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.oh-my-zsh"
+  echo -n " -> Cloning oh-my-zsh ..."
+  # git clone --depth=1 https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.oh-my-zsh"
   echo " -> done"
 else
   echo " -> oh-my-zsh is already present"
+fi
+echo "# Setup oh-my-zsh theme powerlevel10k"
+if [ ! -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
+  echo -n " -> Cloning powerlevel10k ... "
+  git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME/.oh-my-zsh/custom/themes/powerlevel10k"
+  echo " -> done"
+else
+  echo " -> powerlevel10k is already present"
 fi

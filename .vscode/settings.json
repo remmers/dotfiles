@@ -9,6 +9,15 @@
   "editor.detectIndentation": false,
   "debug.allowBreakpointsEverywhere": true,
 
+  "files.watcherExclude": {
+    "**/target/**": true
+  },
+
+  // Dotfiles settings
+  "dotfiles.repository": "https://github.com/remmers/dotfiles.git",
+  "dotfiles.targetPath": "~/dotfiles",
+  "dotfiles.installCommand": "setup.sh",
+
   // Github Copilot settings
   "github.copilot.enable": {
     // "*": false,
