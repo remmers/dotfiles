@@ -112,6 +112,9 @@ if [ ! -d "$HOME/.oh-my-zsh/custom/themes/powerlevel10k" ]; then
   echo -n " -> Cloning powerlevel10k ... "
   git clone --depth=1 https://github.com/romkatv/powerlevel10k.git "$HOME/.oh-my-zsh/custom/themes/powerlevel10k"
   echo " -> done"
+  echo -n " -> Restarting zsh ... "
+  exec zsh
+  echo " -> done"
 else
   echo " -> powerlevel10k is already present"
 fi
