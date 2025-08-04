@@ -1,5 +1,12 @@
 //  test 1
 {
+  // Dotfiles settings
+  // -> for these to take effect in VSCode containers (automatic setup of dotfiles),
+  //    these settings must be part of the user settings (not remote settings)
+  "dotfiles.repository": "https://github.com/remmers/dotfiles.git",
+  "dotfiles.targetPath": "~/dotfiles",
+  "dotfiles.installCommand": "setup.sh",
+
   // General settings
   "telemetry.telemetryLevel": "off", // Disable telemetry
 
@@ -12,11 +19,6 @@
   "files.watcherExclude": {
     "**/target/**": true
   },
-
-  // Dotfiles settings
-  "dotfiles.repository": "https://github.com/remmers/dotfiles.git",
-  "dotfiles.targetPath": "~/dotfiles",
-  "dotfiles.installCommand": "setup.sh",
 
   // Github Copilot settings
   "github.copilot.enable": {
