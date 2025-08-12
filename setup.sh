@@ -119,10 +119,10 @@ else
   echo " -> Plugin zsh-autosuggestions is already present"
 fi
 
-echo -n "Setup zsh complete, restarting ... "
-exec zsh
-echo " -> done"
-
 # Reminder to set zsh as default shell
 echo "Reminder: Set zsh as default using"
 echo "'chsh -s $(which zsh)'"
+
+echo -n "Setup zsh complete, restarting ... "
+exec zsh
+echo " -> done"
