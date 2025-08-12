@@ -88,13 +88,6 @@ else
   # sudo apt-get install zsh
   echo " -> done"
 fi
-# Set the default shell to zsh if it isn't currently set to zsh
-echo "Set as default"
-if [[ ! $(echo $SHELL) == $(which zsh) ]]; then
-  echo " - chsh -s $(which zsh)"
-  chsh -s $(which zsh)
-  echo " -> done"
-fi
 
 ############################
 # oh-my-zsh
@@ -129,3 +122,7 @@ fi
 echo -n "Setup zsh complete, restarting ... "
 exec zsh
 echo " -> done"
+
+# Reminder to set zsh as default shell
+echo "Reminder: Set zsh as default using"
+echo "'chsh -s $(which zsh)'"
