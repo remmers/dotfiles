@@ -123,6 +123,8 @@ fi
 echo "Reminder: Set zsh as default using"
 echo "'chsh -s $(which zsh)'"
 
-echo -n "Setup zsh complete, restarting ... "
-exec zsh
-echo " -> done"
+# Disabled restart, does not seem to work properly with dev containers
+echo -n "Setup zsh complete, restarting using"
+echo "'exec zsh'"
+# exec zsh
+# echo " -> done"
