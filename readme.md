@@ -17,3 +17,12 @@ For VS Code development containers: Add below config to user settings on host. U
   "dotfiles.targetPath": "~/dotfiles",
   "dotfiles.installCommand": "setup.sh",
 ```
+
+For ZSH completions, create ~/.zfunc and add the appropriate completion functions. For example:
+
+``` bash
+cd ~
+mkdir .zfunc
+rustup completions zsh > ~/.zfunc/_cargo 
+rustup completions zsh cargo > ~/.zfunc/_cargo 
+```

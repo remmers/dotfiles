@@ -93,12 +93,21 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+###########################################################
 # User configuration
+###########################################################
 
+# zsh-autosuggestions
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=240"
-fpath+=~/.zfunc
-fpath+=~/.zfunc/_rustup
-fpath+=~/.zfunc/_cargo
+
+# Completion system
+# add command specific completions to ~/.zfunc
+export fpath=(
+    ~/.zfunc
+    "${fpath[@]}"
+)
+autoload -U compinit; compinit
+
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
