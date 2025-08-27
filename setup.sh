@@ -25,11 +25,8 @@ dotfiles_vscode_settings_path=~/dotfiles/.vscode/settings.json
 vscode_settings_dir=~/.vscode-server/data/Machine
 vscode_settings_path=~/.vscode-server/data/Machine/settings.json
 
-
-##########
-
 ############################
-# Symlinks
+# Symlinks for dotfiles
 ############################
 echo "# Setup symlinks to dotfiles"
 
@@ -75,6 +72,18 @@ fi
   echo -n "   - symlink from $dotfiles_dir_vscode to ~/"
   ln -s $dotfiles_vscode_settings_path $vscode_settings_path
   echo " ... done"
+
+############################################
+# .local directory, e.g. for zsh history
+############################################
+echo "# Creating directory ~/.local_user_data"
+if [ ! -d "$HOME/.local_user_data" ]; then
+  echo -n " -> mkdir ~/.local_user_data ... "
+  mkdir -p $HOME/.local_user_data
+  echo " -> done"
+else
+  echo " -> Directory ~/.local_user_data already exists"
+fi
 
 ############################
 # ZSH
@@ -126,5 +135,3 @@ echo "'chsh -s $(which zsh)'"
 # Disabled restart, does not seem to work properly with dev containers
 echo -n "Setup zsh complete, restarting using"
 echo "'exec zsh'"
-# exec zsh
-# echo " -> done"
