@@ -4,6 +4,10 @@
 [init]
 	defaultBranch = main
 
+# Set default editor to vim
+[core]
+  editor = vim
+
 # see also https://github.com/jessfraz/dotfiles/blob/main/.gitconfig
 [alias]
 	# Color graph log view
