@@ -1,6 +1,12 @@
 Installation
 ------------
 
+ZSH must be installed manually using
+``` bash
+sudo apt install zsh
+```
+
+Afterwards, run the following commands to clone the dotfiles repository and run the setup script:
 ``` bash
 cd ~
 git clone https://github.com/remmers/dotfiles.git ./dotfiles
@@ -8,6 +14,10 @@ chmod +x ./dotfiles/setup.sh
 ./dotfiles/setup.sh
 chsh -s $(which zsh)
 ```
+
+VS Code Dev Container
+------------
+
 
 For VS Code development containers: Add below config to user settings on host. User settings from WSL are not synchronized to dev containers.
 
@@ -17,6 +27,8 @@ For VS Code development containers: Add below config to user settings on host. U
   "dotfiles.installCommand": "setup.sh",
 ```
 
+ZSH Completions
+------------
 For ZSH completions, create ~/.zfunc and add the appropriate completion functions. For example:
 
 ``` bash
