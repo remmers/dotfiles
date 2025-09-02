@@ -1,8 +1,10 @@
-[user]
-	name = remmers
-	email = 15615520+remmers@users.noreply.github.com
+# Set user information in .gitconfig.local
+# [user]
+#   name = 
+#   email = 
+
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 # Set default editor to vim
 [core]
@@ -10,10 +12,10 @@
 
 # see also https://github.com/jessfraz/dotfiles/blob/main/.gitconfig
 [alias]
-	# Color graph log view
-	graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
+  # Color graph log view
+  graph = log --graph --color --pretty=format:"%C(yellow)%H%C(green)%d%C(reset)%n%x20%cd%n%x20%cn%x20(%ce)%n%x20%s%n"
 
 # Any host specific configuration should be in a separate file
 # to avoid conflicts with other machines.
 [include]
-	path = ~/dotfiles/.gitconfig.local
+  path = ~/dotfiles/.gitconfig.local
