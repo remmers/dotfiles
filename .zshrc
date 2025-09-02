@@ -7,14 +7,10 @@ fi
 
 # If you come from bash you might have to change your $PATH.
 path=(
-	$HOME/.nvm/versions/node/v20.14.0/bin
-	$HOME/.cargo/bin
 	$path
 )
 # export to sub-processes (make it inherited by child processes)
 export PATH
-
-export PATH=$HOME/.nvm/versions/node/v20.14.0/bin:$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -137,3 +133,8 @@ autoload -U compinit; compinit
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Load .zshrc.local if it exists
+if [ -f ~/.zshrc.local ]; then
+  source ~/dotfiles/.zshrc.local
+fi

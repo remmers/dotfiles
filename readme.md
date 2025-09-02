@@ -15,6 +15,8 @@ chmod +x ./dotfiles/setup.sh
 chsh -s $(which zsh)
 ```
 
+Host/User specific configurations can be added to `~/dotfiles/.gitconfig.local` and `~/dotfiles/.zshrc.local`.
+
 VS Code Dev Container
 ------------
 
